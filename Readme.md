@@ -1,5 +1,5 @@
 ## Resumate📰
 Your Own Resume Builder.
-Currently Working its Frotend.
+Currently Working on its Frotend.
 
 ## Made with 💖 by Kunal Kushwaha
