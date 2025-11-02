@@ -1,10 +1,19 @@
 import React from 'react'
+import { Zap } from 'lucide-react';
+import Title from './Title';
 
 const Features = () => {
     const [isHover, setIsHover] = React.useState(false);
   return (
     
     <div id='features' className='flex flex-col items-center my-10 scroll-mt-12'>
+
+        <div className="flex items-center gap-2 text-sm text-blue-600 bg-blue-400/10 border border-indigo-200 rounded-full px-6 py-1.5">
+            <Zap width={14}/>
+            <span>Simple Process</span>
+        </div>
+        <Title title='Build Your Resume' description='Our Streamlined Process helps you create a professional resume in minutes with intelligent AI-powered tools and features.'/>
+
     <div className="flex flex-col md:flex-row items-center justify-center">
                 <img className="max-w-2xl w-full xl:-ml-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/group-image-1.png" alt="" />
                 <div className="px-4 md:px-0" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
