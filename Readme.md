@@ -1,6 +1,6 @@
 ## Resumate📰
 Your Own Resume Builder.
 Currently Working on its Frotend.
-(Making Login Page).
+(Starting Login Page).
 
 ## Made with 💖 by Kunal Kushwaha
