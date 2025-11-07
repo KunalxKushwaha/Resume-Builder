@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const Navbar = () => {
-  const user = { name: "John Doe" };
+  const user = { name: "Kunal" };
   const navigate = useNavigate();
 
   const logoutUser = () => {
