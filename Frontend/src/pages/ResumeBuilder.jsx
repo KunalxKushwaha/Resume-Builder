@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link , useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
-import { ArrowLeftIcon, Briefcase, FileText, FolderIcon, GraduationCap, Sparkles, User } from 'lucide-react'
+import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIcon, GraduationCap, Sparkles, User } from 'lucide-react'
 
 const ResumeBuilder = () => {
 
@@ -95,7 +95,20 @@ const ResumeBuilder = () => {
               <hr className='absolute top-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 border-none transition-all duration-2000' style={{width: `${activeSectionIndex * 100 / (sections.length - 1)}%`}} />
 
               {/* Section Navigations */}
-              <div>
+              <div className='flex justify-between items-center mb-6 border-b border-gray-300 py-1'>
+                <div></div>
+                <div className='flex items-center'>
+                  {activeSectionIndex !== 0 && (
+                    <button onClick ={()=> setActiveSectionIndex((prevIndex)=> Math.max(prevIndex - 1, 0)) } className='flex items-center gap-1 p-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transtion-all' disabled={activeSectionIndex === 0}>
+                      <ChevronLeft className='sixe-4' /> Previous
+                    </button>
+                  )}
+
+                  <button onClick ={()=> setActiveSectionIndex((prevIndex)=> Math.min(prevIndex + 1, sections.length - 1)) } className={`flex items-center gap-1 p-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transtion-all ${activeSectionIndex === sections.length -  1 && 'opacity-50'}`} disabled={activeSectionIndex === sections.length - 1}>
+                      Next <ChevronRight className='sixe-4' /> 
+                    </button>
+
+                </div>
                 
               </div>
 
