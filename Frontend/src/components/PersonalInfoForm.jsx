@@ -1,4 +1,4 @@
-import { User } from 'lucide-react'
+import { BriefcaseBusiness, Globe, Linkedin, Mail, MapPin, Phone, User } from 'lucide-react'
 import React from 'react'
 
 const PersonalInfoForm = ({data, onChange, removeBackground, setRemoveBackground}) => {
@@ -6,6 +6,30 @@ const PersonalInfoForm = ({data, onChange, removeBackground, setRemoveBackground
     const handleChange = (field, value) => {
         onChange({...data, [field]: value})
     }
+
+    const fields = [
+        {
+            key: "Full name", label: "Full Name", icon: User, type: "text", required: true
+        },
+         {
+            key: "email", label: "Email Address", icon: Mail, type: "email", required: true
+        },
+         {
+            key: "phone", label: "Phone Number", icon: Phone, type: "tel"
+        },
+         {
+            key: "location", label: "Location", icon: MapPin, type: "text"
+        },
+         {
+            key: "profession", label: "Profession", icon: BriefcaseBusiness, type: "text", 
+        },
+         {
+            key: "linkedin", label: "LinkedIn", icon: Linkedin, type: "url"
+        },
+         {
+            key: "website", label: "Personal Website", icon: Globe, type: "url"
+        },
+    ]
   return (
     <div>
       <h3 className='text-lg font-semibold text-gray-900'>Personal Information</h3>
@@ -36,6 +60,16 @@ const PersonalInfoForm = ({data, onChange, removeBackground, setRemoveBackground
         )}
 
       </div>
+
+      {fields.map((field) => (
+        const Icon = field.icon;
+        return (
+            <div></div>
+        )
+
+      ))}
+
+
     </div>
   )
 }
