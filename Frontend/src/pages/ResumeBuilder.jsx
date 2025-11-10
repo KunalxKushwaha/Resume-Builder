@@ -92,7 +92,7 @@ const ResumeBuilder = () => {
           <div className='relative lg:col-span-5 rounded-lg overflow-hidden'>
             <div className='bg-white rounded-lg shadow-sm border border-gray-200 p-6 pt-1'>
               <hr className='absolute top-0 left-0 right-0 border-2 border-gray-200' />
-              <hr className='absolute top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-green-600 border-none transition-all duration-2000' style={{width: `${activeSectionIndex * 100 / (sections.length - 1)}%`}} />
+              <hr className='absolute top-0 left-0 h-1 bg-gradient-to-r from-blue -500 to-green-600 border-none transition-all duration-2000' style={{width: `${activeSectionIndex * 100 / (sections.length - 1)}%`}} />
 
               {/* Section Navigations */}
               <div className='flex justify-between items-center mb-6 border-b border-gray-300 py-1'>
