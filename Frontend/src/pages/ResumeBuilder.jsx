@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import { Link , useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
 import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIcon, GraduationCap, Sparkles, User } from 'lucide-react'
+import PersonalInfoForm from '../components/PersonalInfoForm'
 
 const ResumeBuilder = () => {
 
-   const {resumeId} = useParams
+   const {resumeId} = useParams();
   const [resumeData, setResumeData] = React.useState({
     _id: '',
     title: '',
@@ -117,7 +118,9 @@ const ResumeBuilder = () => {
               <div className='space-y-6'>
                 {
                   activeSection.id === 'personal' && (
-                    <div></div>
+                    <PersonalInfoForm data={resumeData.personal_info} onChange={
+                      (data) => setResumeData(prev => ({...prev, personal_info:data}))
+                    } removeBackground={removeBackground} setRemoveBackground={setRemoveBackground}/>
                   )
                 }
 
