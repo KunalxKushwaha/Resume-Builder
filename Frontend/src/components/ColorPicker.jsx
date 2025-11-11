@@ -27,7 +27,9 @@ const ColorPicker = ({selectedColor, onChange}) => {
         {
             isOpen && (
                 <div className='grid grid-cols-4 w-60 gap-2 absolute top-full left-0 right-0 mt-2 p-3 z-10 bg-white rounded-md border border-gray-200 shadow-sm'>
-                    {colors}
+                    {colors.map((color) => (
+                        
+                    ))}
 
                 </div>
             )
