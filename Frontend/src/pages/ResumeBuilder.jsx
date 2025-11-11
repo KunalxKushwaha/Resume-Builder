@@ -98,7 +98,9 @@ const ResumeBuilder = () => {
 
               {/* Section Navigations */}
               <div className='flex justify-between items-center mb-6 border-b border-gray-300 py-1'>
-                <div></div>
+                <div>
+                  
+                </div>
                 <div className='flex items-center'>
                   {activeSectionIndex !== 0 && (
                     <button onClick ={()=> setActiveSectionIndex((prevIndex)=> Math.max(prevIndex - 1, 0)) } className='flex items-center gap-1 p-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transtion-all' disabled={activeSectionIndex === 0}>
