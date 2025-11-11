@@ -9,7 +9,7 @@ const PersonalInfoForm = ({data, onChange, removeBackground, setRemoveBackground
 
     const fields = [
         {
-            key: "Full name", label: "Full Name", icon: User, type: "text", required: true
+            key: "full_name", label: "Full Name", icon: User, type: "text", required: true
         },
          {
             key: "email", label: "Email Address", icon: Mail, type: "email", required: true
