@@ -57,8 +57,8 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                             )}
                             {data.personal_info?.email && (
                                 <div className="flex items-center gap-2">
-                                    <Mail size={14} style={{ color: accentColor }} />
-                                    <span>{data.personal_info.email}</span>
+                                    <Mail size={14} style={{ color: accentColor }} className="shrink-0 mt-1 text-gray-700"/>
+                                    <span className="break-all text-sm text-gray-700">{data.personal_info.email}</span>
                                 </div>
                             )}
                             {data.personal_info?.location && (
