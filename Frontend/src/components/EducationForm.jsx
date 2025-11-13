@@ -5,8 +5,8 @@ const EducationForm = ({data, onChange}) => {
 
      const addEducation = () => {
         const newEducation = {
-            Institute: '',
-            Degree: '',
+            institute: '',
+            degree: '',
             field: '',
             graduation_date: '',
             gpa: '',
@@ -60,9 +60,9 @@ const EducationForm = ({data, onChange}) => {
 
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
-                            <input value={education.Institute || ""} onChange={(e)=> updateEducation(index, "Institute", e.target.value)} type="text" className='px-3 py-2 text-sm' placeholder='Institute Name'/>
+                            <input value={education.institute || ""} onChange={(e)=> updateEducation(index, "institute", e.target.value)} type="text" className='px-3 py-2 text-sm' placeholder='Institute Name'/>
 
-                            <input value={education.Degree || ""} onChange={(e)=> updateEducation(index, "Degree", e.target.value)} type="text" className='px-3 py-2 text-sm' placeholder="Degree (eg. Bachelor's, Master's):"/>
+                            <input value={education.degree || ""} onChange={(e)=> updateEducation(index, "degree", e.target.value)} type="text" className='px-3 py-2 text-sm' placeholder="Degree (eg. Bachelor's, Master's):"/>
 
                             <input value={education.field || ""} onChange={(e)=> updateEducation(index, "field", e.target.value)} type="text" className='px-3 py-2 text-sm' placeholder='Filed Of Study'/>
 
