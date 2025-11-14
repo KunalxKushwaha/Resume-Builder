@@ -58,7 +58,7 @@ const ProjectForm = ({data, onChange}) => {
                              <input value={project.type || ""} onChange={(e)=> updateProject(index, "type", e.target.value)} type="text" className='px-3 py-2 text-sm rounded-lg' placeholder='Project Type'/>
 
 
-                              <textarea rows={4} value={project.description || ""} onChange={(e)=> updateProject(index, "description", e.target.value)}  className='px-3 py-2 text-sm rounded-lg resize-none w-full' placeholder='Describe Your Project'></textarea>
+                              <textarea rows={4} value={project.description || ""} onChange={(e)=> updateProject(index, "description", e.target.value)}  className='px-3 py-2 text-sm rounded-lg resize-none w-[420px]' placeholder='Describe Your Project'></textarea>
 
         
 
