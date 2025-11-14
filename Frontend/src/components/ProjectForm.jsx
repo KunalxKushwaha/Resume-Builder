@@ -43,7 +43,7 @@ const ProjectForm = ({data, onChange}) => {
         </div>
        
        <div className='space-y-4 mt-6'>
-                {data.map((project, index)=> (
+                {data.map((projects, index)=> (
                     <div key={index} className='p-4 border border-gray-200 rounded-lg space-y-3'>
                         <div className='flex justify-between items-start'>
                             <h4> Project #{index + 1}</h4>
@@ -53,12 +53,12 @@ const ProjectForm = ({data, onChange}) => {
 
                         </div>
                         <div className='grid md:grid-cols-2 gap-3'>
-                            <input value={project.name || ""} onChange={(e)=> updateProject(index, "name", e.target.value)} type="text" className='px-3 py-2 text-sm rounded-lg' placeholder='Project Name'/>
+                            <input value={projects.name || ""} onChange={(e)=> updateProject(index, "name", e.target.value)} type="text" className='px-3 py-2 text-sm rounded-lg' placeholder='Project Name'/>
 
-                             <input value={project.type || ""} onChange={(e)=> updateProject(index, "type", e.target.value)} type="text" className='px-3 py-2 text-sm rounded-lg' placeholder='Project Type'/>
+                             <input value={projects.type || ""} onChange={(e)=> updateProject(index, "type", e.target.value)} type="text" className='px-3 py-2 text-sm rounded-lg' placeholder='Project Type'/>
 
 
-                              <textarea rows={4} value={project.description || ""} onChange={(e)=> updateProject(index, "description", e.target.value)}  className='px-3 py-2 text-sm rounded-lg resize-none w-[420px]' placeholder='Describe Your Project'></textarea>
+                              <textarea rows={4} value={projects.description || ""} onChange={(e)=> updateProject(index, "description", e.target.value)}  className='px-3 py-2 text-sm rounded-lg resize-none w-[420px]' placeholder='Describe Your Project'></textarea>
 
         
 
