@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link , useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
-import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIcon, GraduationCap, Sparkles, User } from 'lucide-react'
+import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIcon, GraduationCap, Share2Icon, Sparkles, User } from 'lucide-react'
 import PersonalInfoForm from '../components/PersonalInfoForm'
 import ResumePreview from '../components/ResumePreview'
 import TemplateSelector from '../components/TemplateSelector'
@@ -173,14 +173,24 @@ const ResumeBuilder = () => {
 
 
               </div>
+              <button className='bg-gradient-to-br from-green-100 to-green-200 ring-green-300 text-green-600 ring hover:ring-green-400 transition-all rounded-md px-6 py-2 mt-6 text-sm'>Save Changes</button>
 
             </div>
 
           </div>
           {/* Right Panel*/}
           <div className='lg:col-span-7 max-lg:mt-6'>
-            <div>
+            <div className='relative w-full'>
               {/* Buttons */}
+              <div className='absolute bottom-3 left-0 right-0 flex items-center justify-end gap-2'>
+                {resumeData.public && (
+                  <button>
+                    <Share2Icon className='size-4'/>
+                  </button>
+                )}
+
+              </div>
+
             </div>
 
             {/* Resume Preview */}
