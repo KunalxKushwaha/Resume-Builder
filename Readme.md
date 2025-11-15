@@ -1,6 +1,7 @@
 ## Resumate📰
 Your Own Resume Builder.<br>
-Currently Working on its Frotend.<br>
-Making the final buttons of Frontend.👍<br>
+Frotend Finished.<br>
+Now will Start its Backend Server
+
 
 ## Made with 💖 by Kunal Kushwaha
