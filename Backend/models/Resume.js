@@ -7,4 +7,36 @@ const ResumeSchema = new mongoose.Schema({
     public: {type: Boolean, default: "false"},
     template: {type: String, default: "classic"},
     accent_color: {tyoe: String, default: '#3B82F6'},
+    professional_summary: {type: String, default: ''},
+    skills: [{type: String}],
+    personal_info: {
+        image: {type: String, default: ''},
+        full_name: {type: String, default: ''},
+        profession: {type: String, default: ''},
+        email: {type: String, default: ''},
+        phone: {type: String, default: ''},
+        location: {type: String, default: ''},
+        linkedIn: {type: String, default: ''},
+        website: {type: String, default: ''},
+    },
+    experience: [
+        {
+            company: {type: String},
+            position: {type: String},
+            start_date: {type: String},
+            end_date: {type: String},
+            description: {type: String},
+            is_current: {type: Boolean},
+        }
+    ],
+    projects: [
+        {
+            company: {type: String},
+            position: {type: String},
+            start_date: {type: String},
+            end_date: {type: String},
+            description: {type: String},
+            is_current: {type: Boolean},
+        }
+    ],
 })
