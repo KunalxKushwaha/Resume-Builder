@@ -31,12 +31,24 @@ const ResumeSchema = new mongoose.Schema({
     ],
     projects: [
         {
-            company: {type: String},
-            position: {type: String},
-            start_date: {type: String},
-            end_date: {type: String},
+            name: {type: String},
+            type: {type: String},
             description: {type: String},
-            is_current: {type: Boolean},
+    
         }
     ],
-})
+
+    education: [
+        {
+            institution: {type: String},
+            degree: {type: String},
+            field: {type: String},
+            graduation_date: {type: String},
+            gpa: {type: Boolean},
+        }
+    ],
+}, {timestamps: true, minimize: false})
+
+const Resume = mongoose.model("Resume", ResumeSchema)
+
+export default Resume
