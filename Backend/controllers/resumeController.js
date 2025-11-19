@@ -1,9 +1,6 @@
-import Resume from "../models/Resume";
+import Resume from "../models/Resume.js";
 
 //controller for creating a new Resume
-
-
-
 //POST: /api/resumes/create
 export const createResume = async (req, res) => {
     try {
