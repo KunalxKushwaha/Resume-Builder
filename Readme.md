@@ -1,7 +1,7 @@
 ## Resumate📰
 Your Own Resume Builder.<br>
 Frotend Finished.<br>
-Now will Start its Backend Server
+Working on Making AI Controllers for the functionality.
 
 
 ## Made with 💖 by Kunal Kushwaha
