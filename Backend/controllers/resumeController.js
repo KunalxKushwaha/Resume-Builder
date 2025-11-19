@@ -95,7 +95,7 @@ export const updateResume = async (req,res) => {
 
             const imageBufferData = fs.createReadStream(image.path)
 
-            const response = await imagekit.Files.upload({
+            const response = await imagekit.files.upload({
   file: imageBufferData,
   fileName: 'resume.png',
   folder: 'user-resumes',
