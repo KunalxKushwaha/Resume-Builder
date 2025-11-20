@@ -24,7 +24,9 @@ const Login = () => {
              const endpoint = state === "login" ? "login" : "register";
 
         const { data } = await api.post(`/api/users/${endpoint}`, formData);
-            dispatch(login(data));
+            console.log("Login response:", data);
+dispatch(login(data));
+
             localStorage.setItem('token', data.token)
             toast.success(data.message)
         } catch (error) {

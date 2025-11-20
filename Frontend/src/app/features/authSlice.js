@@ -10,14 +10,15 @@ import {createSlice} from '@reduxjs/toolkit'
 
         reducers: {
             login: (state, action) => {
-                state.token - action.payload.token
+                state.token = action.payload.token
                 state.user = action.payload.user
+                
 
             },
             logout: (state) => {
-                state.token = '',
-                state.user = null,
-                localStorage.removeItem('token')
+                state.token = '';
+                state.user = null;
+                localStorage.removeItem('token');
             },
             setLoading: (state, action) => {
                 state.loading = action.payload
@@ -28,3 +29,4 @@ import {createSlice} from '@reduxjs/toolkit'
 export const {login, logout, setLoading} = authSlice.actions
 
 export default authSlice.reducer
+

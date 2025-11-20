@@ -70,7 +70,7 @@ export const loginUser = async (req,res) => {
         }
 
         // check if password is correct
-        if(!user.comparePassord(password)) {
+        if(!user.comparePassword(password)) {
             return res.status(400).json({message: "Invalid email or password"})
         }
 
@@ -123,7 +123,7 @@ export const getUserResumes = async (req,res) => {
         return res.status(200).json({resumes})
         
     } catch (error) {
-        return res.status(400),json({message: error.message})
+        return res.status(400).json({message: error.message})
         
     }
 }

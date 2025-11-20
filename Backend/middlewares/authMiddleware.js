@@ -1,12 +1,12 @@
+import jwt from "jsonwebtoken";
 
-
-const protect = async (req, resizeBy, next) => {
+const protect = async (req, res, next) => {
     const token = req.headers.authorization;
     if(!token) {
         return res.status(401).json({message: 'UnAuthorized'});
     }
     try {
-        const decoded = JsonWebTokenError.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
         req.userId = decoded.userId;
         next();
         
@@ -17,3 +17,4 @@ const protect = async (req, resizeBy, next) => {
 }
 
 export default protect;
+
