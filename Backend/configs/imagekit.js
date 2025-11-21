@@ -7,4 +7,4 @@ const imageKit = new ImageKit({
 
 
 
-export default ImageKit
+export default imageKit
