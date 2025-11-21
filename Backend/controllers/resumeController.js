@@ -83,102 +83,48 @@ export const getPublicResumeById = async (req, res) => {
 // controller for updating the resume
 // PUT: /api/resumes/update
 
-// export const updateResume = async (req,res) => {
-//     try {
-//         const userId = req.userId;
-//         const {resumeId, resumeData, removeBackground} = req.body;
-//         const image = req.file;
+export const updateResume = async (req,res) => {
+    try {
+        const userId = req.userId;
+        const {resumeId, resumeData, removeBackground} = req.body;
+        const image = req.file;
 
-//         let resumeDataCopy;
-//         if(typeof resumeData ==='string'){
-//             resumeDataCopy = await JSON.parse(resumeData);
-//         }else{
-//             resumeDataCopy = structuredClone(resumeData)
-//         }
-
-//         if(image) {
-
-//             const imageBufferData = fs.createReadStream(image.path)
-
-//             const response = await imagekit.files.upload({
-//   file: imageBufferData,
-//   fileName: 'resume.png',
-//   folder: 'user-resumes',
-//   transformation: {
-//     pre: 'w-300,h-300,fo-face,z-0.75' + (removeBackground ? ',e-bgremove': '')
-//   } 
-// });
-
-
-//         resumeDataCopy.personal_info.image = response.url
-
-
-//         }
-
-//         const resume = await Resume.findOneAndUpdate(
-//   { userId, _id: resumeId },
-//   { $set: resumeDataCopy },
-//   { new: true }
-// )
-
-
-//         return res.status(200).json({message: "Saved Successfully", resume})
-//     } catch (error) {
-//         return res.status(400).json({message: error.message})
-//     }
-// }
-export const updateResume = async (req, res) => {
-  try {
-    const userId = req.userId;
-    const { resumeId, resumeData, removeBackground } = req.body;
-    const image = req.file;
-
-    // parse resumeData safely
-    let resumeDataCopy;
-    if (typeof resumeData === 'string') resumeDataCopy = JSON.parse(resumeData);
-    else resumeDataCopy = structuredClone(resumeData);
-
-    // Handle file -> upload to ImageKit (supports both disk and memory)
-    if (image) {
-      let fileStream;
-      if (image.path) fileStream = fs.createReadStream(image.path);
-      else if (image.buffer) {
-        const Stream = require('stream');
-        fileStream = new Stream.Readable();
-        fileStream._read = () => {};
-        fileStream.push(image.buffer);
-        fileStream.push(null);
-      } else throw new Error("No file buffer/path");
-
-      const response = await imagekit.files.upload({
-        file: fileStream,
-        fileName: `resume-${Date.now()}.png`,
-        folder: 'user-resumes',
-        transformation: {
-          pre: 'w-300,h-300,fo-face,z-0.75' + (removeBackground ? ',e-bgremove' : '')
+        let resumeDataCopy;
+        if(typeof resumeData ==='string'){
+            resumeDataCopy = await JSON.parse(resumeData);
+        }else{
+            resumeDataCopy = structuredClone(resumeData)
         }
-      });
 
-      resumeDataCopy.personal_info = resumeDataCopy.personal_info || {};
-      resumeDataCopy.personal_info.image = response.url;
+        if(image) {
+
+            const imageBufferData = fs.createReadStream(image.path)
+
+            const response = await imagekit.files.upload({
+  file: imageBufferData,
+  fileName: 'resume.png',
+  folder: 'user-resumes',
+  transformation: {
+    pre: 'w-300,h-300,fo-face,z-0.75' + (removeBackground ? ',e-bgremove': '')
+  } 
+});
+
+
+        resumeDataCopy.personal_info.image = response.url
+
+
+        }
+
+        const resume = await Resume.findOneAndUpdate(
+  { userId, _id: resumeId },
+  { $set: resumeDataCopy },
+  { new: true }
+)
+
+
+        return res.status(200).json({message: "Saved Successfully", resume})
+    } catch (error) {
+        return res.status(400).json({message: error.message})
     }
+}
 
-    // Merge with existing resume to avoid deleting nested fields
-    const existing = await Resume.findOne({ userId, _id: resumeId });
-    if (!existing) return res.status(404).json({ message: "Resume not found" });
-
-    const merged = { ...existing.toObject(), ...resumeDataCopy };
-    merged.personal_info = { ...(existing.personal_info || {}), ...(resumeDataCopy.personal_info || {}) };
-
-    const updated = await Resume.findOneAndUpdate(
-      { userId, _id: resumeId },
-      { $set: merged },
-      { new: true }
-    );
-
-    return res.status(200).json({ message: "Saved Successfully", resume: updated });
-  } catch (error) {
-    console.error("updateResume error:", error);
-    return res.status(400).json({ message: error.message });
-  }
-};

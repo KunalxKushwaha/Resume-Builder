@@ -130,6 +130,8 @@ const ResumeBuilder = () => {
 
   const saveResume = async () => {
     try {
+      console.log("FINAL resumeData BEFORE SEND:", resumeData);
+
       let updatedResumeData = structuredClone(resumeData)
 
       //Remove image from updatedResumeData
