@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-red-50">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-100 to-pink-300">
 
             {/* 🔥 Animate form for login ↔ signup */}
             <AnimatePresence mode="wait">

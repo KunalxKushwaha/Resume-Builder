@@ -123,7 +123,7 @@ const Footer = () => {
             </div>
 
             <p className="mt-3 text-center">
-              © 2025 <a href="https://prebuiltui.com" className="hover:text-indigo-400">Resumate</a>
+              © 2025 <a href="/" className="hover:text-indigo-400">Resumate</a>
             </p>
           </motion.div>
         </motion.div>
