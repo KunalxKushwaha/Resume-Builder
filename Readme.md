@@ -114,7 +114,7 @@ sharing, background removal, and more.
 
 ## 📁 Project Structure
 
-    / client
+    / Frontend
       ├── src
       │   ├── components
       │   ├── templates
@@ -122,7 +122,7 @@ sharing, background removal, and more.
       │   ├── redux
       │   ├── utils
       │   └── styles
-    / server
+    / Backend
       ├── controllers
       ├── models
       ├── middleware
@@ -136,8 +136,8 @@ sharing, background removal, and more.
 
 ### 1️⃣ Clone Repo
 
-    git clone https://github.com/yourusername/resumate.git
-    cd resumate
+    git clone https://github.com/KunalxKushwaha/Resume-Builder.git
+    cd Frontend
 
 ### 2️⃣ Install Frontend
 
