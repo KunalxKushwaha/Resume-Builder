@@ -147,7 +147,7 @@ sharing, background removal, and more.
 
 ### 3️⃣ Install Backend
 
-    cd server
+    cd Backend
     npm install
     npm run dev
 
