@@ -141,7 +141,7 @@ sharing, background removal, and more.
 
 ### 2️⃣ Install Frontend
 
-    cd client
+    cd Frontend
     npm install
     npm run dev
 
