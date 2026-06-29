@@ -148,8 +148,8 @@ sharing, background removal, and more.
 ### 3️⃣ Install Backend
 
     cd Backend
-    npm install
-    npm run dev
+    npm install -y
+    node server.js
 
 ### 4️⃣ Add Environment Variables
 
