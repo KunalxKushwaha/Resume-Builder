@@ -155,8 +155,8 @@ sharing, background removal, and more.
 
     MONGO_URI=your_mongodb_uri
     JWT_SECRET=your_secret_key
-    CLOUDINARY_KEY=optional
-    CLOUDINARY_SECRET=optional
+    IMAGEKIT_PRIIVATE_KEY=optional
+    OPENAI_MODEL=optional
 
 ------------------------------------------------------------------------
 
